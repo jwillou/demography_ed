@@ -4,9 +4,17 @@ setwd("/Users/jannawilloughby/Google Drive/My Drive/Willoughby lab/projects - ac
 #load necessary data
 survey_data = read.table("Input/Cleaned up Coastal Tourist Combined Data - modified codes.csv", header=T, sep=",")
 
+#add survey data modifications
+survey_data$MeanKnowledge = rowMeans(survey_data[, c("Policy", "Wildlife")], na.rm = TRUE)
+survey_data$MeanView = rowMeans(survey_data[, c("Turtleview", "Dolphinview", "Wildlifeview")], na.rm = TRUE)
+survey_data$MeanFish = rowMeans(survey_data[, c("Fishbeach", "Fishjetty", "Fishboat")], na.rm = TRUE)
+survey_data$Boat = rowMeans(survey_data[, c("Boatmotor", "Boatsail")], na.rm = TRUE)
+
+#retrieve predictors of knowledge, with weights for each (based on combined regression)
+preds = Predictors(survey_data)
+
 #create agents from survey data and set initial knowledge level                                       
 agents = survey_data
-agents$knowledge_level = apply(agents[,17:18],1,mean, na.rm=T) #mean of policy and wildlife knowledge  ####should this be changed?
 
 #setup output object
 OUT = NULL

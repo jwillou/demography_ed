@@ -15,3 +15,4 @@ library(scales)      #need this for plotting, this allows transparency in colors
 #source(paste(getwd(), "/RunModel.R", sep = ''))
 #source(paste(getwd(), "/UpdateBehavior", sep = ''))
 #source(paste(getwd(), "/DemographicShift", sep = ''))
+#source(paste(getwd(), "/Predictors", sep = ''))
