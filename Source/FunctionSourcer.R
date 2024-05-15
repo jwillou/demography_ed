@@ -12,6 +12,6 @@ setwd(paste(directory,"/Source/", sep = '')) #set temp working directory
 library(scales)      #need this for plotting, this allows transparency in colors for overlapping lines
 
 #source functions
-source(paste(getwd(), "/RunModel.R", sep = ''))
-source(paste(getwd(), "/UpdateBehavior", sep = ''))
-source(paste(getwd(), "/DemographicShift", sep = ''))
+#source(paste(getwd(), "/RunModel.R", sep = ''))
+#source(paste(getwd(), "/UpdateBehavior", sep = ''))
+#source(paste(getwd(), "/DemographicShift", sep = ''))

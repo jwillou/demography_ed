@@ -2,9 +2,9 @@ setwd("/Users/jannawilloughby/Google Drive/My Drive/Willoughby lab/projects - ac
 #setwd("/Users/jrw0107/Google Drive/My Drive/Willoughby lab/projects - active/dolphins and turtles/demography_ed/")
 
 #load necessary data
-survey_data = read.table("Input/Cleaned up Coastal Tourist Combined Data - modified codes test.csv", header=T, sep=",")
+survey_data = read.table("Input/Cleaned up Coastal Tourist Combined Data - modified codes.csv", header=T, sep=",")
 
-#create agents from survey data and set initial knowledge level                                        ####Can be modified with Hannah/TiAnna script to expand and shuffle?
+#create agents from survey data and set initial knowledge level                                       
 agents = survey_data
 agents$knowledge_level = apply(agents[,17:18],1,mean, na.rm=T) #mean of policy and wildlife knowledge  ####should this be changed?
 
