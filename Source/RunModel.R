@@ -8,7 +8,7 @@ survey_data = read.table("Input/Cleaned up Coastal Tourist Combined Data - modif
 survey_data$MeanKnowledge = rowMeans(survey_data[, c("Policy", "Wildlife")], na.rm = TRUE)
 survey_data$MeanView = rowMeans(survey_data[, c("Turtleview", "Dolphinview", "Wildlifeview")], na.rm = TRUE)
 survey_data$MeanFish = rowMeans(survey_data[, c("Fishbeach", "Fishjetty", "Fishboat")], na.rm = TRUE)
-survey_data$Boat = rowMeans(survey_data[, c("Boatmotor", "Boatsail")], na.rm = TRUE)
+survey_data$MeanBoat = rowMeans(survey_data[, c("Boatmotor", "Boatsail")], na.rm = TRUE)
 
 #retrieve predictors of knowledge, with weights for each (based on combined regression)
 preds = Predictors(survey_data)
